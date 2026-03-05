@@ -6,7 +6,7 @@ from report_generator import generate_report
 def main():
     target = input("Enter target IP: ")
 
-    run_scan(target)
+    run_scan(target) 
     services = parse_scan("scan.xml")
     findings = assess_risk(services)
     generate_report(findings)
