@@ -2,14 +2,14 @@ import subprocess
 import os
 
 def run_scan(target, output_file="scan.xml"):
-    # heck if running as root
+    #check if running as root
     is_root = os.geteuid() == 0
 
     if is_root:
-        scan_type = "-sS"  # SYN scan (stealthy)
+        scan_type = "-sS"  # stealthy little syn scan, this requires root priv
         print("[+] Running privileged SYN scan")
     else:
-        scan_type = "-sT"  # TCP connect scan (no root required)
+        scan_type = "-sT"  # TCP connect scan, no root required
         print("[!] Not running as root. Falling back to TCP connect scan")
 
     command = [

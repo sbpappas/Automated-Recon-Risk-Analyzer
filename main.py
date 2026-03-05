@@ -6,10 +6,10 @@ from report_generator import generate_report
 def main():
     target = input("Enter target IP: ")
 
-    run_scan(target) 
-    services = parse_scan("scan.xml")
-    findings = assess_risk(services)
-    generate_report(findings)
+    run_scan(target) # create file
+    services = parse_scan("scan.xml") # parse file
+    findings = assess_risk(services) #analyze data
+    generate_report(findings) #create pretty report
 
 if __name__ == "__main__":
     main()
