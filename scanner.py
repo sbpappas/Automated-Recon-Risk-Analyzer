@@ -13,13 +13,13 @@ def run_scan(target, output_file="scan.xml"):
         print("[!] Not running as root. Falling back to TCP connect scan")
 
     command = [
-        "nmap",
-        scan_type,
-        "-sV",
-        "-O",
-        "-oX",
-        output_file,
-        target
+        "nmap", # main command
+        scan_type, #syn (root) or tcp connect scan
+        "-sV", # version detection
+        "-O", # OS detection
+        "-oX", # ouput in xml format
+        output_file, # to this file
+        target #the target IP
     ]
 
     print(f"[+] Running scan against {target}")

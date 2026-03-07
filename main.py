@@ -8,7 +8,7 @@ def main():
     target = input("Enter target IP: ")
 
     run_scan(target) # create file
-    if not os.path.exists("scan.xml"): #be safe
+    if not os.path.exists("scan.xml"): #be safe and check
         print("[!] No scan results found. Exiting.")
         return
     
