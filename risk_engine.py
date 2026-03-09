@@ -16,6 +16,9 @@ def assess_risk(service_info):
         if port in risky_ports:
             risk = "High"
 
+        if service["vulnerabilities"]: # if anything
+            risk = "High"
+
         findings.append({
             **service,
             "risk": risk
