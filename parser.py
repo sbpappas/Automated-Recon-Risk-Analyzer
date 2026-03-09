@@ -9,20 +9,31 @@ def parse_scan(file):
     for host in root.findall("host"):
         for port in host.findall(".//port"):
             state = port.find("state").attrib["state"]
+
             if state != "open":
                 continue
 
             service = port.find("service")
+
             port_id = port.attrib["portid"]
             service_name = service.attrib.get("name", "")
             product = service.attrib.get("product", "")
             version = service.attrib.get("version", "")
 
+            vulnerabilities = []
+
+            for script in port.findall("script"):
+                vulnerabilities.append({
+                    "id": script.attrib.get("id"),
+                    "output": script.attrib.get("output")
+                })
+
             results.append({
                 "port": port_id,
                 "service": service_name,
                 "product": product,
-                "version": version
+                "version": version,
+                "vulnerabilities": vulnerabilities
             })
 
     return results
