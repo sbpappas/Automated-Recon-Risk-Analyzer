@@ -2,8 +2,8 @@ import subprocess
 import os
 
 def run_scan(target, output_file="scan.xml"):
-    #check if running as root
-    is_root = os.geteuid() == 0
+    
+    is_root = os.geteuid() == 0 #check if running as root
 
     if is_root:
         scan_type = "-sS"  # stealthy little syn scan, this requires root priv
@@ -17,7 +17,7 @@ def run_scan(target, output_file="scan.xml"):
         scan_type, #syn (root) or tcp connect scan
         "-sV", # version detection
         "-O", # OS detection
-        "-oX", # ouput in xml format
+        "-oX", # ouput in xml format, can also use -oN for normal or -oG for grepable
         output_file, # to this file
         target #the target IP
     ]
