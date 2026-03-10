@@ -12,8 +12,10 @@ def main():
         print("[!] No scan results found. Exiting.")
         return
     
+    print("[+] Parsing scan results...")
     services = parse_scan("scan.xml") # parse file
     findings = assess_risk(services) #analyze data
+    print("[+] Generating report...")
     generate_report(findings) #create pretty report
 
 if __name__ == "__main__":

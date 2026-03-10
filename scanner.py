@@ -18,7 +18,7 @@ def run_scan(target, output_file="scan.xml"):
         "nmap", # main command
         scan_type, #syn (root) or tcp connect scan
         "-sV", # version detection
-        "--script" 
+        "--script",
         "vuln",
         os_flag, # OS detection if root
         "-oX", # ouput in xml format, can also use -oN for normal or -oG for grepable
