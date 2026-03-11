@@ -27,6 +27,7 @@ def run_scan(target, output_file="scan.xml"):
     ]
 
     print(f"[+] Running scan against {target}")
+    print("[DEBUG] Command:", " ".join(command))
     result = subprocess.run(command)
 
     if result.returncode != 0:
