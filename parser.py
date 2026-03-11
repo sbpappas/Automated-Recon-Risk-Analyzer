@@ -7,6 +7,10 @@ def parse_scan(file):
     results = []
 
     for host in root.findall("host"):
+
+        # -------------------------
+        # Parse PORT results
+        # -------------------------
         for port in host.findall(".//port"):
             state = port.find("state").attrib["state"]
 
@@ -35,5 +39,21 @@ def parse_scan(file):
                 "version": version,
                 "vulnerabilities": vulnerabilities
             })
+
+        # -------------------------
+        # Parse HOST scripts
+        # -------------------------
+        for hostscript in host.findall("hostscript"):
+            for script in hostscript.findall("script"):
+                results.append({
+                    "port": "N/A",
+                    "service": "host",
+                    "product": "",
+                    "version": "",
+                    "vulnerabilities": [{
+                        "id": script.attrib.get("id"),
+                        "output": script.attrib.get("output")
+                    }]
+                })
 
     return results
