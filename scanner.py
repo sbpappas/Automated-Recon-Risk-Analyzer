@@ -8,7 +8,7 @@ def run_scan(target, output_file="scan.xml"):
     command = [
         "nmap",
         "-sV",
-        #"--script", "vuln",
+        #"--script", "vuln", # nse was taking too long
         "-oX", output_file
     ]
 
