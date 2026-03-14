@@ -1,6 +1,6 @@
 def assess_risk(service_info):
     risky_ports = {
-        "21": "FTP - Often misconfigured",
+        "21": "FTP - Make sure it is not misconfigured",
         "23": "Telnet - Unencrypted",
         "445": "SMB - Lateral movement risk",
         "3306": "MySQL - Database exposure",
