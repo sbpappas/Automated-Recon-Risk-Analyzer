@@ -20,5 +20,13 @@ def generate_report(findings, output="report.md"):
                     f.write(f"- {vuln['id']}: {vuln['output']}\n")
 
                 f.write("\n")
+            
+            if "suggestions" in item and item["suggestions"]:
+                f.write("### Suggested Next Steps\n")
+
+                for suggestion in item["suggestions"]:
+                    f.write(f"- {suggestion}\n")
+
+                f.write("\n")
 
     print(f"[+] Report saved to {output}")
