@@ -1,5 +1,5 @@
 # Security Assessment Report
-Generated: 2026-03-13 22:09:51.848678
+Generated: 2026-03-14 22:32:10.954814
 
 ## Port 5000 (rtsp)
 Product:  
@@ -36,8 +36,4 @@ Risk Level: Low
 ### Suggested Next Steps
 - Run web scanner: nikto -h http://127.0.0.1:9001
 - Directory brute force: gobuster dir -u http://127.0.0.1:9001 -w wordlist.txt
-
-## Port 49176 (bandwidth-test)
-Product: MikroTik bandwidth-test server 
-Risk Level: Low
 

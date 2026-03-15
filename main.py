@@ -3,6 +3,7 @@ from parser import parse_scan
 from risk_engine import assess_risk
 from report_generator import generate_report
 from attack_suggestions import suggest_attacks
+from cve_lookup import lookup_cves  
 import os
 
 def main():
@@ -22,6 +23,10 @@ def main():
             item["service"],
             item["port"],
             target
+        )
+        item["cves"] = lookup_cves(
+            item["product"],
+            item["version"]
         )
     print("Generating report...")
     generate_report(findings) #create pretty report
