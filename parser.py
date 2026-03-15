@@ -40,9 +40,7 @@ def parse_scan(file):
                 "vulnerabilities": vulnerabilities
             })
 
-        # -------------------------
-        # Parse HOST scripts
-        # -------------------------
+        # parse HOST scripts
         for hostscript in host.findall("hostscript"):
             for script in hostscript.findall("script"):
                 results.append({
