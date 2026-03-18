@@ -33,7 +33,7 @@ def main():
         )
     print("Generating report...")
     generate_report(findings) #create pretty report
-    print_results(findings, target)
+    print_results(findings, target) #nice output in CLI
 
 def print_results(findings, target):
     print(f"\n[+] Scan Results for {target}\n")
@@ -47,7 +47,7 @@ def print_results(findings, target):
 
         if item.get("cves"):
             for cve in item["cves"]:
-                print(f"    [CVE] {cve}")
+                print(f"    [CVE] {cve}") # still might need some improvement
 
         if item.get("suggestions"):
             for suggestion in item["suggestions"]:
