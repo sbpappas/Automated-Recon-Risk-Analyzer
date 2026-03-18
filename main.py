@@ -33,6 +33,27 @@ def main():
         )
     print("Generating report...")
     generate_report(findings) #create pretty report
+    print_results(findings, target)
+
+def print_results(findings, target):
+    print(f"\n[+] Scan Results for {target}\n")
+
+    for item in findings:
+        port = item["port"]
+        service = item["service"]
+        risk = item["risk"]
+
+        print(f"[OPEN] Port {port} ({service}) - {risk} Risk")
+
+        if item.get("cves"):
+            for cve in item["cves"]:
+                print(f"    [CVE] {cve}")
+
+        if item.get("suggestions"):
+            for suggestion in item["suggestions"]:
+                print(f"    → {suggestion}")
+
+        print()
 
 if __name__ == "__main__":
     main()
