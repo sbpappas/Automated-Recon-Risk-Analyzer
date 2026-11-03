@@ -13,8 +13,9 @@ CVE mapping (basic)
 Attack path suggestions
 Report generation (Markdown)
 
-How to run: python3 main.py (I think?)
-
+How to run: python3 main.py
+This will generate a report in report.md for you to review
+ 
 Features
 Automated Nmap scanning
 Service and version detection
