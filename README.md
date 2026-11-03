@@ -13,7 +13,7 @@ CVE mapping (basic)
 Attack path suggestions
 Report generation (Markdown)
 
-The tool is designed to demonstrate both offensive security thinking and automation skills, making it ideal for entry-level cybersecurity roles.
+How to run: python3 main.py (I think?)
 
 Features
 Automated Nmap scanning
